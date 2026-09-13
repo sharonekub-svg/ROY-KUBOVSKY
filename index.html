@@ -1,23 +1,850 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>רועי קובובסקי, עורכי דין — משפט מנהלי, מכרזים וליטיגציה מנהלית</title>
-  <meta name="description" content="עו״ד רועי קובובסקי — משפט מנהלי, דיני מכרזים וליטיגציה מנהלית. מעל שני עשורים בליטיגציה מורכבת. מדורג Legal 500." />
-  <meta name="theme-color" content="#000000" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="רועי קובובסקי, עורכי דין — משפט מנהלי, מכרזים וליטיגציה מנהלית" />
-  <meta property="og:description" content="עו״ד רועי קובובסקי — משפט מנהלי, דיני מכרזים וליטיגציה מנהלית. מעל שני עשורים בליטיגציה מורכבת. מדורג Legal 500." />
-  <meta property="og:locale" content="he_IL" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>רועי קובובסקי, עורכי דין — משפט מנהלי, מכרזים וליטיגציה מנהלית</title>
+<meta name="description" content="עו״ד רועי קובובסקי — משפט מנהלי, דיני מכרזים וליטיגציה מנהלית. מעל שני עשורים בליטיגציה מורכבת. מדורג Legal 500." />
+<meta name="theme-color" content="#000000" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="רועי קובובסקי, עורכי דין" />
+<meta property="og:description" content="משפט מנהלי, דיני מכרזים וליטיגציה מנהלית. מדורג Legal 500." />
+<meta property="og:locale" content="he_IL" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Assistant:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000000'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23ffffff' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E" />
+<style>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Assistant:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000000'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23ffffff' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E" />
+/* =========================================================
+   רועי קובובסקי, עורכי דין
+   שחור-לבן · RTL · תנועה מבוימת
+   ========================================================= */
+
+:root{
+  --black:#000000;
+  --ink:#0a0a0a;
+  --paper:#f2f1ee;
+  --paper-2:#e7e5e1;
+  --white:#ffffff;
+  --text:#101010;
+  --text-soft:#5d5b57;
+  --line:#d6d3ce;
+  --line-dark:rgba(255,255,255,.16);
+  --maxw:1240px;
+  --serif:"Frank Ruhl Libre", Georgia, "Times New Roman", serif;
+  --sans:"Assistant", system-ui, "Segoe UI", Arial, sans-serif;
+  --ease:cubic-bezier(.19,1,.22,1);
+  --ease-curtain:cubic-bezier(.76,0,.24,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background:var(--black);
+  line-height:1.8;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body.locked{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.01em}
+.wrap{width:min(var(--maxw),88%);margin-inline:auto}
+
+:focus-visible{outline:2px solid currentColor;outline-offset:4px;border-radius:2px}
+
+/* ===== 1. וילון פתיחה ===== */
+.curtain{
+  position:fixed;inset:0;z-index:9999;background:var(--black);
+  display:grid;place-items:center;
+  transition:transform 1.1s var(--ease-curtain);
+}
+.curtain.lift{transform:translateY(-101%)}
+.curtain-mark{
+  font-family:var(--serif);color:#fff;
+  font-size:clamp(1.4rem,4.5vw,2.6rem);letter-spacing:.42em;
+  padding-inline-start:.42em;
+  opacity:0;transform:translateY(14px);
+  animation:markIn 1s var(--ease) .15s forwards;
+}
+.curtain-rule{
+  position:absolute;inset-block-end:0;inset-inline:0;height:1px;background:rgba(255,255,255,.18);
+}
+.curtain-rule::after{
+  content:"";position:absolute;inset-block:0;inset-inline-start:0;width:0;background:#fff;
+  animation:ruleGrow 1.5s var(--ease-curtain) .1s forwards;
+}
+@keyframes markIn{to{opacity:1;transform:none}}
+@keyframes ruleGrow{to{width:100%}}
+
+/* ===== 2. חשיפת טקסט ממסכה ===== */
+.lines{display:block}
+.ln{display:block;overflow:hidden;padding-block-end:.06em}
+.ln>i{
+  display:block;font-style:inherit;
+  transform:translateY(115%);
+  transition:transform 1.15s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.ready .hero .ln>i,.rv.in .ln>i{transform:none}
+
+/* חשיפה בגלילה */
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.rv-fade{opacity:0;transition:opacity 1.2s var(--ease);transition-delay:var(--d,0s)}
+.rv-fade.in{opacity:1}
+
+/* חשיפת תמונה ממסכה */
+.mask{overflow:hidden;position:relative}
+.mask>img{transform:scale(1.18);transition:transform 1.6s var(--ease),filter 1.6s var(--ease);filter:grayscale(1) contrast(1.06)}
+.mask::after{
+  content:"";position:absolute;inset:0;background:var(--black);
+  transform-origin:bottom;transition:transform 1.2s var(--ease-curtain);
+}
+.mask.in>img{transform:scale(1)}
+.mask.in::after{transform:scaleY(0)}
+
+/* ===== 3. סרגל התקדמות ===== */
+.progress{position:fixed;inset-block-start:0;inset-inline:0;height:2px;z-index:180;background:transparent;pointer-events:none}
+.progress span{display:block;height:100%;width:0;background:#fff;mix-blend-mode:difference}
+
+/* ===== 4. כותרת עליונה ===== */
+.hdr{
+  position:fixed;inset-block-start:0;inset-inline:0;z-index:150;
+  padding:1.6rem 0;
+  transition:transform .6s var(--ease),background .5s ease,padding .5s ease;
+  mix-blend-mode:difference;
+}
+.hdr.hide{transform:translateY(-130%)}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.mark{font-family:var(--serif);color:#fff;font-size:1.12rem;letter-spacing:.3em;padding-inline-start:.3em;line-height:1.2}
+.mark small{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.26em;opacity:.65;margin-block-start:.25rem;padding-inline-start:.1em}
+
+/* כפתור MENU */
+.menu-btn{
+  background:none;border:0;cursor:pointer;color:#fff;
+  display:flex;align-items:center;gap:.8rem;
+  font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;font-weight:400;
+  padding:.4rem 0;
+}
+.menu-btn .bars{display:block;width:26px;height:10px;position:relative}
+.menu-btn .bars i{position:absolute;inset-inline:0;height:1px;background:#fff;transition:transform .5s var(--ease),opacity .3s ease}
+.menu-btn .bars i:nth-child(1){top:0}
+.menu-btn .bars i:nth-child(2){top:9px}
+.menu-btn[aria-expanded="true"] .bars i:nth-child(1){transform:translateY(4.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] .bars i:nth-child(2){transform:translateY(-4.5px) rotate(-45deg)}
+.menu-btn .lbl{display:block;height:1em;line-height:1;overflow:hidden;width:4.2em}
+.menu-btn .lbl i{display:block;font-style:normal;transition:transform .5s var(--ease)}
+.menu-btn .lbl i span{display:block;height:1em;line-height:1}
+.menu-btn[aria-expanded="true"] .lbl i{transform:translateY(-1em)}
+
+/* ===== 5. תפריט מסך מלא ===== */
+.menu{
+  position:fixed;inset:0;z-index:140;background:var(--black);
+  clip-path:inset(0 0 100% 0);
+  transition:clip-path 1s var(--ease-curtain),visibility 0s linear 1s;
+  display:flex;flex-direction:column;justify-content:center;
+  visibility:hidden;
+}
+.menu.open{clip-path:inset(0 0 0 0);visibility:visible;transition:clip-path 1s var(--ease-curtain),visibility 0s}
+.menu-nav{display:block}
+.menu-nav a{
+  display:block;position:relative;
+  font-family:var(--serif);color:#fff;
+  font-size:clamp(2.1rem,7vw,4.6rem);line-height:1.16;font-weight:400;
+  padding-block:.1em;
+  overflow:hidden;
+}
+.menu-nav a>span{
+  display:block;transform:translateY(110%);
+  transition:transform .9s var(--ease);
+  transition-delay:calc(var(--i) * .07s + .25s);
+}
+.menu.open .menu-nav a>span{transform:none}
+.menu-nav a>span::before{
+  content:attr(data-n);
+  font-family:var(--sans);font-size:.75rem;letter-spacing:.2em;
+  opacity:.4;margin-inline-end:1.2rem;vertical-align:super;
+}
+.menu-nav a>span::after{
+  content:"";position:absolute;inset-block-end:.18em;inset-inline-start:0;
+  height:1px;width:100%;background:#fff;
+  transform:scaleX(0);transform-origin:right;
+  transition:transform .6s var(--ease);
+}
+.menu-nav a:hover>span::after,.menu-nav a:focus-visible>span::after{transform:scaleX(1)}
+.menu-foot{
+  margin-block-start:clamp(2.5rem,7vh,5rem);
+  padding-block-start:2rem;border-block-start:1px solid var(--line-dark);
+  display:flex;flex-wrap:wrap;gap:2.5rem 4rem;
+  color:rgba(255,255,255,.62);font-size:.9rem;line-height:1.9;
+  opacity:0;transition:opacity .7s ease .6s;
+}
+.menu.open .menu-foot{opacity:1}
+.menu-foot b{display:block;color:rgba(255,255,255,.42);font-size:.66rem;letter-spacing:.24em;font-weight:400;margin-block-end:.5rem}
+.menu-foot a:hover{color:#fff}
+
+/* ===== 6. HERO ===== */
+.hero{
+  position:relative;min-height:100svh;background:var(--black);color:#fff;
+  display:flex;align-items:flex-end;
+  padding-block:clamp(7rem,14vh,10rem) clamp(2rem,5vh,3.2rem);
+  overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:clamp(60px,8vw,110px) clamp(60px,8vw,110px);
+  -webkit-mask-image:radial-gradient(130% 105% at 78% 8%,#000 0%,transparent 68%);
+  mask-image:radial-gradient(130% 105% at 78% 8%,#000 0%,transparent 68%);
+}
+.hero-in{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr auto;gap:clamp(2rem,6vw,5rem);align-items:end}
+
+.hero-word{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(2.6rem,9.4vw,8.4rem);
+  line-height:.98;letter-spacing:-.035em;
+  margin-block-end:clamp(1.6rem,4vh,2.8rem);
+}
+.hero-word .thin{opacity:.55}
+.hero-sub{
+  max-width:46ch;color:rgba(255,255,255,.72);
+  font-size:clamp(.98rem,1.5vw,1.12rem);line-height:1.95;font-weight:300;
+}
+.hero-meta{
+  margin-block-start:clamp(1.8rem,4vh,2.6rem);
+  display:flex;flex-wrap:wrap;gap:.9rem 2.6rem;
+  font-size:.72rem;letter-spacing:.2em;color:rgba(255,255,255,.5);
+}
+
+/* פס תמונה אנכי */
+.hero-strip{width:clamp(150px,19vw,268px);aspect-ratio:3/4.3;align-self:end;position:relative}
+.hero-strip .mask{width:100%;height:100%}
+.hero-strip img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.hero-strip figcaption{
+  margin-block-start:1rem;font-size:.72rem;letter-spacing:.12em;
+  color:rgba(255,255,255,.55);line-height:1.7;
+}
+.hero-strip figcaption b{display:block;color:#fff;font-family:var(--serif);font-size:1rem;letter-spacing:.02em;font-weight:400}
+
+/* רמז גלילה */
+.scroll-cue{
+  position:absolute;z-index:3;inset-block-end:clamp(1.6rem,4vh,2.6rem);inset-inline-start:6%;
+  display:flex;align-items:center;gap:.9rem;
+  font-size:.66rem;letter-spacing:.26em;color:rgba(255,255,255,.45);
+}
+.scroll-cue .bar{display:block;width:1px;height:54px;background:rgba(255,255,255,.18);position:relative;overflow:hidden}
+.scroll-cue .bar::after{content:"";position:absolute;inset-inline:0;top:-60%;height:60%;background:#fff;animation:cue 2.1s var(--ease) infinite}
+@keyframes cue{0%{top:-60%}60%,100%{top:100%}}
+
+/* ===== 7. סרט נע ===== */
+.ticker{background:var(--black);border-block:1px solid var(--line-dark);overflow:hidden;padding-block:1.15rem}
+.ticker-track{display:flex;width:max-content;animation:marq 46s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track span{
+  display:flex;align-items:center;gap:3.4rem;padding-inline-end:3.4rem;
+  color:rgba(255,255,255,.5);font-size:.74rem;letter-spacing:.24em;white-space:nowrap;
+}
+.ticker-track span i{font-style:normal;display:inline-block;width:4px;height:4px;background:rgba(255,255,255,.3)}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(50%)}}
+
+/* ===== 8. מבנה כללי של מקטעים ===== */
+.sec{padding-block:clamp(5rem,11vw,9.5rem);background:var(--paper);position:relative}
+.sec--dark{background:var(--black);color:#fff}
+.sec-head{margin-block-end:clamp(2.6rem,6vw,4.6rem);max-width:44ch}
+.sec-head h2{font-size:clamp(1.9rem,4.6vw,3.5rem);font-weight:400}
+.sec-head p{margin-block-start:1.1rem;color:var(--text-soft);max-width:52ch}
+.sec--dark .sec-head p{color:rgba(255,255,255,.62)}
+.idx{
+  font-size:.66rem;letter-spacing:.28em;color:var(--text-soft);
+  display:flex;align-items:center;gap:.9rem;margin-block-end:1.4rem;
+}
+.idx::after{content:"";flex:1;height:1px;background:var(--line);max-width:110px}
+.sec--dark .idx{color:rgba(255,255,255,.45)}
+.sec--dark .idx::after{background:var(--line-dark)}
+
+/* ===== 9. אודות ===== */
+.about-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2.5rem,7vw,6rem);align-items:start}
+.portrait{position:relative}
+.portrait .mask{aspect-ratio:4/5}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.portrait-cap{margin-block-start:1.3rem;border-block-start:1px solid var(--line);padding-block-start:1.1rem}
+.portrait-cap b{display:block;font-family:var(--serif);font-size:1.2rem;font-weight:500}
+.portrait-cap span{font-size:.76rem;letter-spacing:.16em;color:var(--text-soft)}
+.direct{margin-block-start:1.6rem;display:flex;flex-direction:column;gap:.1rem}
+.direct a{
+  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  padding-block:.85rem;border-block-end:1px solid var(--line);
+  font-size:.92rem;transition:padding-inline-start .4s var(--ease),color .3s ease;
+}
+.direct a b{font-size:.68rem;letter-spacing:.2em;color:var(--text-soft);font-weight:400}
+.direct a:hover{padding-inline-start:.7rem}
+.direct a:hover b{color:var(--text)}
+
+.about-body p{color:var(--text-soft);font-size:clamp(1rem,1.4vw,1.12rem);line-height:2;margin-block-end:1.5rem;max-width:62ch}
+.about-body p strong{color:var(--text);font-weight:500}
+.facts{margin-block-start:clamp(2rem,4vw,3rem);display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0}
+.fact{padding:1.6rem 1.6rem 1.6rem 0;border-block-start:1px solid var(--line)}
+.fact h3{font-size:.68rem;letter-spacing:.22em;font-family:var(--sans);font-weight:500;color:var(--text-soft);margin-block-end:.7rem}
+.fact p{font-size:.95rem;line-height:1.85;color:var(--text);margin:0}
+
+/* מונים */
+.counts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem;margin-block-start:clamp(2.5rem,5vw,3.5rem)}
+.count b{display:block;font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:400;line-height:1}
+.count span{display:block;margin-block-start:.5rem;font-size:.72rem;letter-spacing:.18em;color:var(--text-soft)}
+
+/* ===== 10. תחומי עיסוק — רשימה ===== */
+.pr-list{border-block-start:1px solid var(--line-dark)}
+.pr{
+  display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1rem,4vw,3.5rem);align-items:baseline;
+  padding-block:clamp(1.8rem,3.4vw,2.7rem);border-block-end:1px solid var(--line-dark);
+  position:relative;
+}
+.pr::before{
+  content:"";position:absolute;inset:0;background:rgba(255,255,255,.045);
+  transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);
+  z-index:0;
+}
+.pr:hover::before{transform:scaleY(1)}
+.pr>*{position:relative;z-index:1}
+.pr-n{font-size:.68rem;letter-spacing:.2em;color:rgba(255,255,255,.38);min-width:2.4em}
+.pr-t{font-family:var(--serif);font-size:clamp(1.3rem,3.1vw,2.15rem);font-weight:400;line-height:1.25;transition:transform .5s var(--ease)}
+.pr:hover .pr-t{transform:translateX(-.5rem)}
+.pr-d{color:rgba(255,255,255,.6);font-size:.96rem;line-height:1.9;max-width:44ch}
+@media(max-width:900px){
+  .pr{grid-template-columns:auto 1fr;gap:.6rem 1.4rem}
+  .pr-d{grid-column:2;max-width:none}
+}
+
+/* ===== 11. ציטוטים ===== */
+.quotes{text-align:center;max-width:56ch;margin-inline:auto;position:relative;min-height:15rem}
+.q{position:absolute;inset-inline:0;inset-block-start:0;opacity:0;transition:opacity .9s ease;pointer-events:none}
+.q.on{opacity:1;position:relative;pointer-events:auto}
+.q blockquote{font-family:var(--serif);font-size:clamp(1.2rem,2.7vw,1.9rem);line-height:1.6;font-weight:300;font-style:italic;color:var(--text)}
+.q cite{display:block;margin-block-start:1.6rem;font-style:normal;font-size:.68rem;letter-spacing:.26em;color:var(--text-soft)}
+.q-dots{display:flex;justify-content:center;gap:.7rem;margin-block-start:2.5rem}
+.q-dots button{width:26px;height:2px;border:0;background:var(--line);cursor:pointer;padding:0;transition:background .4s ease}
+.q-dots button[aria-current="true"]{background:var(--ink)}
+
+/* ===== 12. שאלות נפוצות ===== */
+.faq-item{border-block-end:1px solid var(--line)}
+.faq-item:first-child{border-block-start:1px solid var(--line)}
+.faq-item summary{
+  list-style:none;cursor:pointer;padding-block:1.5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.32rem);font-weight:400;
+  transition:padding-inline-start .4s var(--ease);
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{padding-inline-start:.6rem}
+.faq-item summary .pm{position:relative;width:14px;height:14px;flex:0 0 14px}
+.faq-item summary .pm::before,.faq-item summary .pm::after{content:"";position:absolute;background:var(--ink);transition:transform .45s var(--ease),opacity .3s ease}
+.faq-item summary .pm::before{inset-block-start:50%;inset-inline:0;height:1px;transform:translateY(-50%)}
+.faq-item summary .pm::after{inset-inline-start:50%;inset-block:0;width:1px;transform:translateX(-50%)}
+.faq-item[open] summary .pm::after{transform:translateX(-50%) scaleY(0)}
+.faq-a{padding-block-end:1.8rem;color:var(--text-soft);max-width:68ch;line-height:2}
+
+/* ===== 13. צור קשר ===== */
+.ct-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2.5rem,7vw,6rem)}
+.ct-lines{margin-block-start:2.5rem;display:grid;gap:1.9rem}
+.ct-line b{display:block;font-size:.66rem;letter-spacing:.24em;color:rgba(255,255,255,.42);font-weight:400;margin-block-end:.55rem}
+.ct-line,.ct-line a{color:rgba(255,255,255,.82);line-height:1.9}
+.ct-line a{position:relative;display:inline-block}
+.ct-line a::after{content:"";position:absolute;inset-block-end:-2px;inset-inline:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ct-line a:hover::after{transform:scaleX(1)}
+
+.field{margin-block-end:1.6rem}
+.field label{display:block;font-size:.66rem;letter-spacing:.22em;color:rgba(255,255,255,.45);margin-block-end:.7rem}
+.field input,.field textarea{
+  width:100%;background:transparent;border:0;border-block-end:1px solid var(--line-dark);
+  color:#fff;font-family:var(--sans);font-size:1rem;font-weight:300;
+  padding-block:.7rem;transition:border-color .4s ease;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:#fff}
+.field textarea{resize:vertical;min-height:6rem}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+
+.send{
+  margin-block-start:.8rem;width:100%;cursor:pointer;
+  background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;
+  font-family:var(--sans);font-size:.76rem;letter-spacing:.26em;font-weight:400;
+  padding:1.25rem 2rem;position:relative;overflow:hidden;transition:color .45s ease,border-color .45s ease;
+}
+.send span{position:relative;z-index:1}
+.send::before{content:"";position:absolute;inset:0;background:#fff;transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease)}
+.send:hover{color:#000;border-color:#fff}
+.send:hover::before{transform:scaleY(1)}
+.send[disabled]{opacity:.5;cursor:wait}
+.status{margin-block-start:1.1rem;font-size:.88rem;min-height:1.4em;color:rgba(255,255,255,.7)}
+.status.ok{color:#fff}
+.status.err{color:#ff9f9f}
+
+/* ===== 14. פוטר ===== */
+.foot{background:var(--black);color:rgba(255,255,255,.5);padding-block:3.5rem;border-block-start:1px solid var(--line-dark);font-size:.8rem}
+.foot-in{display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:center;justify-content:space-between}
+.foot nav{display:flex;flex-wrap:wrap;gap:1.6rem}
+.foot a{transition:color .3s ease}
+.foot a:hover{color:#fff}
+
+/* ===== 15. סמן מותאם ===== */
+.cur,.cur-dot{position:fixed;inset-block-start:0;inset-inline-start:0;z-index:9998;pointer-events:none;border-radius:50%;mix-blend-mode:difference;opacity:0;transition:opacity .3s ease}
+.cur{width:34px;height:34px;border:1px solid #fff;margin:-17px 0 0 -17px;transition:opacity .3s ease,width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease)}
+.cur-dot{width:4px;height:4px;background:#fff;margin:-2px 0 0 -2px}
+.cur.big{width:64px;height:64px;margin:-32px 0 0 -32px}
+body.has-cursor .cur,body.has-cursor .cur-dot{opacity:1}
+@media(hover:none),(pointer:coarse){.cur,.cur-dot{display:none}}
+
+/* ===== 16. רספונסיבי ===== */
+@media(max-width:1000px){
+  .about-grid,.ct-grid{grid-template-columns:1fr}
+  .hero-in{grid-template-columns:1fr}
+  .hero-strip{display:none}
+  .scroll-cue{display:none}
+}
+@media(max-width:680px){
+  .wrap{width:90%}
+  .hero{align-items:center;padding-block:8rem 4rem}
+  .field-row{grid-template-columns:1fr}
+  .menu-foot{gap:1.6rem 2.5rem}
+  .hero-meta{gap:.7rem 1.6rem;font-size:.66rem}
+  .foot-in{flex-direction:column;align-items:flex-start}
+}
+
+/* ===== 17. כיבוד העדפת תנועה מופחתת ===== */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .ln>i{transform:none}
+  .rv{opacity:1;transform:none}
+  .rv-fade{opacity:1}
+  .mask::after{transform:scaleY(0)}
+  .mask>img{transform:none}
+}
+
+/* =========================================================
+   שכבה 2 — ליטוש, תנועה, וצור קשר חדש
+   ========================================================= */
+
+/* --- גלילת עמוד חלקה בין מקטעים (מעבר וילון) --- */
+.menu.exit{clip-path:inset(100% 0 0 0)}
+
+/* --- קישור עם גלגול טקסט --- */
+.roll{display:inline-block;overflow:hidden;vertical-align:bottom;height:1.25em;line-height:1.25}
+.roll i{display:block;font-style:normal;transition:transform .55s var(--ease)}
+a:hover .roll i,button:hover .roll i,a:focus-visible .roll i{transform:translateY(-1.25em)}
+
+/* --- הירו: מילת רקע ופרלקסה --- */
+.hero-ghost{
+  position:absolute;z-index:1;inset-block-end:-.14em;inset-inline-start:50%;
+  transform:translateX(-50%);
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(5rem,19vw,17rem);line-height:.8;letter-spacing:.02em;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.07);
+  white-space:nowrap;pointer-events:none;user-select:none;
+}
+.hero-in,.hero-strip{will-change:transform}
+
+/* --- כותרות מקטע: קו שנמתח --- */
+.sec-head h2{position:relative}
+.rule{display:block;height:1px;background:var(--line);margin-block-start:clamp(1.6rem,3vw,2.4rem);transform:scaleX(0);transform-origin:right;transition:transform 1.3s var(--ease) .15s}
+.sec--dark .rule{background:var(--line-dark)}
+.rv.in .rule,.rule.in{transform:scaleX(1)}
+
+/* --- מקטע אמירה --- */
+.statement{background:var(--paper);padding-block:clamp(5.5rem,13vw,11rem)}
+.statement-body{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(1.45rem,4.1vw,3.05rem);line-height:1.32;letter-spacing:-.018em;
+  color:var(--ink);max-width:22ch;
+}
+@media(min-width:760px){.statement-body{max-width:none}}
+.statement-rule{height:1px;background:var(--line);margin-block-start:clamp(2.4rem,5vw,3.6rem);transform:scaleX(0);transform-origin:right;transition:transform 1.4s var(--ease)}
+.statement-rule.in{transform:scaleX(1)}
+
+/* --- תחומי עיסוק: קו מוביל בהובר --- */
+.pr{overflow:hidden}
+.pr-n{transition:color .5s var(--ease)}
+.pr:hover .pr-n{color:#fff}
+.pr::after{
+  content:"";position:absolute;inset-block-end:-1px;inset-inline:0;height:1px;background:#fff;
+  transform:scaleX(0);transform-origin:right;transition:transform .7s var(--ease);z-index:2;
+}
+.pr:hover::after{transform:scaleX(1)}
+
+/* =========================================================
+   צרו קשר
+   ========================================================= */
+.contact{position:relative;overflow:hidden;padding-block:clamp(5.5rem,12vw,9.5rem)}
+.contact-ghost{
+  position:absolute;z-index:0;inset-block-end:-.22em;inset-inline-start:-.04em;
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(4.5rem,17vw,15rem);line-height:.8;letter-spacing:.01em;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.055);
+  white-space:nowrap;pointer-events:none;user-select:none;
+}
+.contact .wrap{position:relative;z-index:1}
+.ct-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(3rem,8vw,7rem);align-items:start}
+.ct-title{font-size:clamp(2rem,5.4vw,4rem);font-weight:400;line-height:1.08;letter-spacing:-.025em}
+.ct-intro{margin-block-start:1.5rem;color:rgba(255,255,255,.6);max-width:42ch;font-size:1.02rem;line-height:1.95}
+
+.ct-lines{margin-block-start:clamp(2.5rem,5vw,3.6rem);display:grid;gap:0}
+.ct-line{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:1.5rem;align-items:start;
+  padding-block:1.5rem;border-block-start:1px solid var(--line-dark);
+}
+.ct-line:last-child{border-block-end:1px solid var(--line-dark)}
+.ct-line b{font-size:.62rem;letter-spacing:.26em;color:rgba(255,255,255,.38);font-weight:400;padding-block-start:.42rem}
+.ct-line>span,.ct-line>div{color:rgba(255,255,255,.78);line-height:1.85}
+.ct-line .faint{display:block;color:rgba(255,255,255,.36);font-size:.85rem;margin-block-start:.3rem}
+.big-link{
+  display:block;color:#fff;font-family:var(--serif);
+  font-size:clamp(1.05rem,2vw,1.42rem);font-weight:400;letter-spacing:.01em;
+  width:max-content;max-width:100%;
+}
+.big-link+.big-link{margin-block-start:.2rem}
+
+/* --- טופס --- */
+.form-shell{position:relative}
+.fld{position:relative;margin-block-end:2.1rem}
+.fld input,.fld textarea{
+  width:100%;background:transparent;border:0;color:#fff;
+  font-family:var(--sans);font-size:1.04rem;font-weight:300;line-height:1.6;
+  padding:.65rem 0 .8rem;
+}
+.fld textarea{resize:vertical;min-height:3.4rem}
+.fld input:focus,.fld textarea:focus{outline:none}
+.fld label{
+  position:absolute;inset-inline-start:0;inset-block-start:.65rem;
+  color:rgba(255,255,255,.45);font-size:1.02rem;font-weight:300;
+  pointer-events:none;transform-origin:right top;
+  transition:transform .45s var(--ease),color .45s ease,opacity .45s ease;
+}
+.fld input:focus~label,.fld textarea:focus~label,
+.fld input:not(:placeholder-shown)~label,.fld textarea:not(:placeholder-shown)~label{
+  transform:translateY(-1.5rem) scale(.66);color:rgba(255,255,255,.55);letter-spacing:.16em;
+}
+.fld-line{position:absolute;inset-inline:0;inset-block-end:0;height:1px;background:var(--line-dark)}
+.fld-line::after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .65s var(--ease)}
+.fld:focus-within .fld-line::after{transform:scaleX(1)}
+.fld.bad .fld-line{background:rgba(255,140,140,.65)}
+
+/* תיבת אישור */
+.consent{display:flex;align-items:flex-start;gap:.95rem;cursor:pointer;margin-block:1.6rem 2.1rem;font-size:.86rem;line-height:1.7;color:rgba(255,255,255,.55)}
+.consent input{position:absolute;opacity:0;width:1px;height:1px}
+.consent .box{flex:0 0 15px;width:15px;height:15px;margin-block-start:.3rem;border:1px solid rgba(255,255,255,.35);position:relative;transition:border-color .35s ease}
+.consent .box::after{content:"";position:absolute;inset:3px;background:#fff;transform:scale(0);transition:transform .35s var(--ease)}
+.consent input:checked~.box{border-color:#fff}
+.consent input:checked~.box::after{transform:scale(1)}
+.consent input:focus-visible~.box{outline:2px solid #fff;outline-offset:3px}
+.consent:hover .box{border-color:rgba(255,255,255,.7)}
+.consent a{color:rgba(255,255,255,.82);text-decoration:underline;text-underline-offset:3px}
+.consent a:hover{color:#fff}
+.consent.bad .box{border-color:rgba(255,140,140,.8)}
+
+/* כפתור שליחה */
+.send{
+  width:100%;cursor:pointer;background:transparent;
+  border:1px solid rgba(255,255,255,.34);color:#fff;
+  font-family:var(--sans);font-size:.74rem;letter-spacing:.26em;font-weight:400;
+  padding:1.3rem 2rem;position:relative;overflow:hidden;
+  transition:color .5s var(--ease),border-color .5s ease;
+}
+.send .send-lbl{position:relative;z-index:1;display:inline-block}
+.send::before{content:"";position:absolute;inset:0;background:#fff;transform:scaleY(0);transform-origin:bottom;transition:transform .55s var(--ease)}
+.send:hover:not([disabled]){color:#000;border-color:#fff}
+.send:hover:not([disabled])::before{transform:scaleY(1)}
+.send[disabled]{opacity:.45;cursor:wait}
+.status{margin-block-start:1.1rem;font-size:.86rem;min-height:1.3em;color:rgba(255,255,255,.6)}
+.status.err{color:#ffa8a8}
+
+/* מסך הצלחה */
+.sent{text-align:center;padding-block:clamp(2rem,6vw,4rem);color:#fff}
+.sent[hidden]{display:none}
+.sent-mark{width:56px;height:56px;color:#fff;margin-inline:auto;display:block;margin-block-end:1.8rem}
+.sent-mark circle{stroke-dasharray:151;stroke-dashoffset:151;animation:draw 1s var(--ease) .1s forwards}
+.sent-mark path{stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s var(--ease) .75s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sent h3{font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:400;margin-block-end:.9rem}
+.sent p{color:rgba(255,255,255,.6);max-width:38ch;margin-inline:auto;line-height:1.9}
+.sent p a{color:#fff;border-block-end:1px solid rgba(255,255,255,.4)}
+.again{
+  margin-block-start:2.2rem;background:none;border:0;cursor:pointer;color:rgba(255,255,255,.5);
+  font-family:var(--sans);font-size:.7rem;letter-spacing:.24em;padding:.6rem 0;position:relative;
+  transition:color .4s ease;
+}
+.again::after{content:"";position:absolute;inset-block-end:.3rem;inset-inline:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.again:hover{color:#fff}
+.again:hover::after{transform:scaleX(1)}
+
+@media(max-width:1000px){
+  .ct-grid{grid-template-columns:1fr}
+  .contact-ghost{font-size:clamp(4rem,26vw,9rem)}
+}
+@media(max-width:520px){
+  .ct-line{grid-template-columns:1fr;gap:.5rem}
+  .ct-line b{padding-block-start:0}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .rule,.statement-rule{transform:none}
+  .sent-mark circle,.sent-mark path{animation:none;stroke-dashoffset:0}
+  .hero-ghost,.contact-ghost{display:none}
+}
+
+
+/* --- כותרות מקטע גדולות --- */
+.big-head{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.3rem,6.6vw,5.2rem);
+  line-height:1.02;letter-spacing:-.032em;
+}
+.about-body .big-head{margin-block-end:0}
+.about-body .rule{margin-block:1.8rem 2.4rem}
+.contact .big-head{color:#fff}
+.contact .rule{margin-block-start:1.8rem}
+.ct-intro{margin-block-start:2rem}
+.sec-head .big-head+p{margin-block-start:1.4rem}
+
+/* הירו — השם במלוא הגודל */
+.hero-word{
+  font-size:clamp(3rem,12.6vw,10.8rem);
+  line-height:.94;letter-spacing:-.045em;
+  font-weight:400;
+}
+@media(max-width:520px){.hero-word{font-size:clamp(2.9rem,17vw,5rem)}}
+
+  
+/* =========================================================
+   שכבה 3 — אתר רב-עמודי, כותרות ענק, מעברי עמוד
+   ========================================================= */
+
+/* --- וילון מעבר בין עמודים --- */
+.curtain{transition:transform 1.05s var(--ease-curtain)}
+.curtain.lift{pointer-events:none}
+.curtain.fast{transition:transform .6s var(--ease-curtain)}
+
+/* --- תפריט: סימון העמוד הנוכחי --- */
+.menu-nav a[aria-current="page"]>span{opacity:.42}
+.menu-nav a[aria-current="page"]>span::after{transform:scaleX(1);opacity:.42}
+
+/* =========================================================
+   כותרת עמוד ענקית
+   ========================================================= */
+.page-head{
+  position:relative;background:var(--black);color:#fff;
+  min-height:clamp(52vh,62svh,78vh);
+  display:flex;align-items:flex-end;
+  padding-block:clamp(8rem,18vh,13rem) clamp(2.6rem,6vh,4.5rem);
+  overflow:hidden;
+}
+.page-head-grid{
+  position:absolute;inset:0;z-index:0;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:clamp(60px,8vw,110px) clamp(60px,8vw,110px);
+  -webkit-mask-image:radial-gradient(130% 110% at 80% 0%,#000 0%,transparent 70%);
+  mask-image:radial-gradient(130% 110% at 80% 0%,#000 0%,transparent 70%);
+}
+.page-head .wrap{position:relative;z-index:2;width:min(var(--maxw),88%)}
+
+.page-crumb{
+  display:flex;align-items:center;gap:.8rem;
+  font-size:.64rem;letter-spacing:.26em;color:rgba(255,255,255,.4);
+  margin-block-end:clamp(1.4rem,3vw,2.2rem);
+}
+.page-crumb a{transition:color .35s ease}
+.page-crumb a:hover{color:#fff}
+.page-crumb i{font-style:normal;opacity:.45}
+
+/* הכותרת עצמה — חשיפת אות-אחר-אות */
+.giant{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(3rem,13.5vw,12rem);
+  line-height:.92;letter-spacing:-.048em;
+  margin:0;
+}
+.giant .gl{display:block;overflow:hidden;white-space:nowrap;padding-block-end:.04em}
+.giant .gc{
+  display:inline-block;white-space:pre;
+  transform:translateY(108%);
+  transition:transform 1.05s var(--ease);
+  transition-delay:calc(var(--c) * 38ms + .35s);
+}
+.ready .giant .gc{transform:none}
+
+.page-lede{
+  margin-block-start:clamp(1.8rem,4vw,2.8rem);
+  max-width:44ch;color:rgba(255,255,255,.62);
+  font-size:clamp(1rem,1.5vw,1.14rem);line-height:1.95;
+  opacity:0;transform:translateY(18px);
+  transition:opacity 1s var(--ease) 1s,transform 1s var(--ease) 1s;
+}
+.ready .page-lede{opacity:1;transform:none}
+
+.page-head-rule{
+  position:absolute;inset-block-end:0;inset-inline:0;height:1px;background:rgba(255,255,255,.15);
+  transform:scaleX(0);transform-origin:right;
+  transition:transform 1.5s var(--ease-curtain) .5s;
+}
+.ready .page-head-rule{transform:scaleX(1)}
+
+/* =========================================================
+   בלוק מעבר לעמוד הבא
+   ========================================================= */
+.next{background:var(--black);color:#fff;padding-block:clamp(4.5rem,10vw,8rem);border-block-start:1px solid var(--line-dark)}
+.next-label{font-size:.64rem;letter-spacing:.26em;color:rgba(255,255,255,.4);margin-block-end:1.2rem}
+.next-link{
+  display:inline-block;font-family:var(--serif);font-weight:400;
+  font-size:clamp(2rem,7vw,5.2rem);line-height:1.04;letter-spacing:-.035em;
+  color:#fff;position:relative;
+}
+.next-link .roll{height:1.05em;line-height:1.05}
+.next-link:hover .roll i{transform:translateY(-1.05em)}
+.next-link::after{
+  content:"";position:absolute;inset-block-end:-.08em;inset-inline:0;height:1px;background:#fff;
+  transform:scaleX(0);transform-origin:right;transition:transform .7s var(--ease);
+}
+.next-link:hover::after{transform:scaleX(1)}
+
+/* =========================================================
+   תקנון — עמוד טקסט
+   ========================================================= */
+.legal{background:var(--paper);padding-block:clamp(4.5rem,10vw,8rem)}
+.legal-grid{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:clamp(2.5rem,7vw,5.5rem);align-items:start}
+.legal-toc{position:sticky;top:7rem}
+.legal-toc b{display:block;font-size:.62rem;letter-spacing:.26em;color:var(--text-soft);font-weight:400;margin-block-end:1.2rem}
+.legal-toc a{
+  display:block;padding-block:.55rem;font-size:.9rem;color:var(--text-soft);
+  border-block-end:1px solid var(--line);transition:color .3s ease,padding-inline-start .4s var(--ease);
+}
+.legal-toc a:hover,.legal-toc a.active{color:var(--ink);padding-inline-start:.5rem}
+.legal-body{max-width:72ch}
+.legal-body section{padding-block-end:clamp(2.4rem,5vw,3.4rem);scroll-margin-top:7rem}
+.legal-body h2{
+  font-size:clamp(1.15rem,2.2vw,1.5rem);font-weight:500;
+  margin-block-end:1rem;display:flex;gap:1rem;align-items:baseline;
+}
+.legal-body h2 em{font-family:var(--sans);font-style:normal;font-size:.66rem;letter-spacing:.2em;color:var(--text-soft);flex:0 0 auto}
+.legal-body p{color:var(--text-soft);line-height:2;margin-block-end:1rem}
+.legal-body ul{margin:0 1.2rem 1rem 0;color:var(--text-soft);line-height:2}
+.legal-body li{margin-block-end:.4rem}
+.legal-body a{color:var(--ink);border-block-end:1px solid var(--line);transition:border-color .3s}
+.legal-body a:hover{border-color:var(--ink)}
+.legal-meta{
+  margin-block-start:clamp(2.5rem,5vw,3.5rem);padding-block-start:1.8rem;
+  border-block-start:1px solid var(--line);font-size:.82rem;color:var(--text-soft);
+}
+@media(max-width:820px){
+  .legal-grid{grid-template-columns:1fr}
+  .legal-toc{position:static;display:none}
+}
+
+/* =========================================================
+   התאמות לעמודים הפנימיים
+   ========================================================= */
+.inner .sec:first-of-type{padding-block-start:clamp(4rem,9vw,7rem)}
+.hero-only .hdr{mix-blend-mode:difference}
+
+/* קישור CTA גדול בעמוד הבית */
+.home-cta{background:var(--paper-2);padding-block:clamp(4.5rem,10vw,8rem)}
+.home-cta .next-label{color:var(--text-soft)}
+.home-cta .next-link{color:var(--ink)}
+.home-cta .next-link::after{background:var(--ink)}
+
+@media(max-width:520px){
+  .giant{font-size:clamp(2.6rem,15vw,4.4rem);letter-spacing:-.035em}
+  .page-head{min-height:46svh}
+}
+@media(prefers-reduced-motion:reduce){
+  .giant .gc{transform:none}
+  .page-lede{opacity:1;transform:none}
+  .page-head-rule{transform:scaleX(1)}
+  .curtain{display:none}
+}
+
+/* =========================================================
+   שכבה 4 — רצועת "צרו קשר" בתחתית כל עמוד
+   ========================================================= */
+.cta-band{
+  background:var(--black);color:#fff;
+  padding-block:clamp(4rem,9vw,7rem);
+  border-block-start:1px solid var(--line-dark);
+  position:relative;overflow:hidden;
+}
+.cta-eyebrow{font-size:.64rem;letter-spacing:.26em;color:rgba(255,255,255,.4);margin-block-end:1.1rem}
+.cta-big{
+  display:inline-block;font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.2rem,8vw,5.6rem);line-height:1.02;letter-spacing:-.04em;
+  color:#fff;position:relative;
+}
+.cta-big .roll{height:1.04em;line-height:1.04}
+.cta-big:hover .roll i{transform:translateY(-1.04em)}
+.cta-big::after{
+  content:"";position:absolute;inset-block-end:-.06em;inset-inline:0;height:1px;background:#fff;
+  transform:scaleX(0);transform-origin:right;transition:transform .7s var(--ease);
+}
+.cta-big:hover::after{transform:scaleX(1)}
+
+.cta-rows{
+  margin-block-start:clamp(2.6rem,6vw,4.2rem);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:0;border-block-start:1px solid var(--line-dark);
+}
+.cta-row{padding:1.6rem 2rem 1.6rem 0;border-block-end:1px solid var(--line-dark)}
+.cta-row b{
+  display:block;font-size:.62rem;letter-spacing:.26em;font-weight:400;
+  color:rgba(255,255,255,.38);margin-block-end:.8rem;
+}
+.cta-row span{color:rgba(255,255,255,.7);line-height:1.8;font-size:.95rem}
+.cta-row .big-link{font-size:clamp(1rem,1.7vw,1.25rem)}
+.cta-row .big-link+.big-link{margin-block-start:.15rem}
+
+.cta-next{
+  margin-block-start:clamp(2rem,4vw,3rem);
+  font-size:.78rem;letter-spacing:.1em;color:rgba(255,255,255,.4);
+}
+.cta-next a{color:rgba(255,255,255,.85);position:relative}
+.cta-next a::after{
+  content:"";position:absolute;inset-block-end:-3px;inset-inline:0;height:1px;background:currentColor;
+  transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease);
+}
+.cta-next a:hover{color:#fff}
+.cta-next a:hover::after{transform:scaleX(1)}
+
+@media(max-width:600px){
+  .cta-rows{grid-template-columns:1fr}
+  .cta-row{padding-inline-end:0}
+}
+
+
+/* =========================================================
+   שכבה 5 — מצב קובץ יחיד: החלפת תצוגות במקום טעינת עמוד
+   ========================================================= */
+.view[hidden]{display:none}
+.view{display:block}
+
+/* החשיפה מתרחשת לפי התצוגה הפעילה, לא לפי טעינת העמוד */
+.ready .hero .ln > i{transform:translateY(115%)}
+.view.shown .hero .ln > i{transform:none}
+.ready .giant .gc{transform:translateY(108%)}
+.view.shown .giant .gc{transform:none}
+.ready .page-lede{opacity:0;transform:translateY(18px)}
+.view.shown .page-lede{opacity:1;transform:none}
+.ready .page-head-rule{transform:scaleX(0)}
+.view.shown .page-head-rule{transform:scaleX(1)}
+
+@media (prefers-reduced-motion: reduce){
+  .ready .hero .ln > i,.ready .giant .gc{transform:none}
+  .ready .page-lede{opacity:1;transform:none}
+  .ready .page-head-rule{transform:scaleX(1)}
+}
+
+</style>
 </head>
-<body class="home">
+<body>
 
 <div class="curtain" id="curtain" aria-hidden="true">
   <div class="curtain-mark">קובובסקי</div>
@@ -30,7 +857,7 @@
 
 <header class="hdr" id="hdr">
   <div class="wrap hdr-in">
-    <a href="index.html" class="mark" aria-label="רועי קובובסקי, עורכי דין — לעמוד הבית">
+    <a href="#home" class="mark" aria-label="רועי קובובסקי, עורכי דין — לעמוד הבית">
       קובובסקי
       <small>עורכי דין</small>
     </a>
@@ -44,10 +871,10 @@
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="תפריט ראשי">
   <div class="wrap">
     <nav class="menu-nav">
-      <a href="about.html" style="--i:0"><span data-n="01">אודות</span></a>
-      <a href="practice.html" style="--i:1"><span data-n="02">תחומי עיסוק</span></a>
-      <a href="faq.html" style="--i:2"><span data-n="03">שאלות נפוצות</span></a>
-      <a href="contact.html" style="--i:3"><span data-n="04">צרו קשר</span></a>
+      <a href="#about" style="--i:0" data-nav="about"><span data-n="01">אודות</span></a>
+      <a href="#practice" style="--i:1" data-nav="practice"><span data-n="02">תחומי עיסוק</span></a>
+      <a href="#faq" style="--i:2" data-nav="faq"><span data-n="03">שאלות נפוצות</span></a>
+      <a href="#contact" style="--i:3" data-nav="contact"><span data-n="04">צרו קשר</span></a>
     </nav>
     <div class="menu-foot">
       <div>
@@ -69,6 +896,7 @@
   </div>
 </div>
 
+<main class="view" id="view-home" data-view="home" hidden>
 
 <section class="hero" id="top">
   <div class="hero-grid" aria-hidden="true"></div>
@@ -138,23 +966,429 @@
   </div>
 </section>
 
-<section class="home-cta">
+
+<section class="cta-band" aria-label="יצירת קשר">
   <div class="wrap">
-    <p class="next-label rv">המשך</p>
-    <a href="about.html" class="next-link rv" style="--d:.08s"><span class="roll"><i>אודות</i><i>אודות</i></span></a>
+    <p class="cta-eyebrow rv">יש לכם שאלה?</p>
+    <a href="#contact" class="cta-big rv" style="--d:.06s"><span class="roll"><i>צרו קשר</i><i>צרו קשר</i></span></a>
+
+    <div class="cta-rows">
+      <div class="cta-row rv" style="--d:.12s">
+        <b>טלפון</b>
+        <a href="tel:03-6072222" class="big-link"><span class="roll"><i>03-6072222</i><i>03-6072222</i></span></a>
+        <a href="tel:054-2113091" class="big-link"><span class="roll"><i>054-2113091</i><i>054-2113091</i></span></a>
+      </div>
+      <div class="cta-row rv" style="--d:.18s">
+        <b>דוא״ל</b>
+        <a href="mailto:roy.kubovsky@dle.co.il" class="big-link js-email"><span class="roll"><i>roy.kubovsky@dle.co.il</i><i>roy.kubovsky@dle.co.il</i></span></a>
+      </div>
+      <div class="cta-row rv" style="--d:.24s">
+        <b>המשרד</b>
+        <span>מגדלי עזריאלי 1 (המגדל העגול)<br />קומה 36, תל אביב יפו</span>
+      </div>
+    </div>
+    <p class="cta-next rv" style="--d:.3s">העמוד הבא — <a href="#about">אודות</a></p>
   </div>
 </section>
 
+</main>
+
+<main class="view" id="view-about" data-view="about" hidden>
+
+<section class="page-head">
+  <div class="page-head-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="page-crumb"><a href="#home">בית</a><i>—</i><span>אודות</span></p>
+    <h1 class="giant"><span class="gl"><span class="gc" style="--c:0">א</span><span class="gc" style="--c:1">ו</span><span class="gc" style="--c:2">ד</span><span class="gc" style="--c:3">ו</span><span class="gc" style="--c:4">ת</span></span></h1>
+      <p class="page-lede">עורך דין המתמחה במשפט מנהלי, בדיני מכרזים ובליטיגציה מנהלית, עם מעל שני עשורים בתיקים המורכבים במשק.</p>
+  </div>
+  <span class="page-head-rule" aria-hidden="true"></span>
+</section>
+
+<section class="sec">
+  <div class="wrap about-grid">
+    <div class="portrait">
+      <div class="mask rv-mask">
+        <img src="assets/roey-portrait.jpg" alt="עו״ד רועי קובובסקי" loading="lazy"
+             data-fallback="https://i.postimg.cc/fbTm22HN/469183981-1145784470342402-2918503025163317510-n-%281%29.jpg"
+             onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}else{this.closest('.portrait').style.display='none';}" />
+      </div>
+      <div class="portrait-cap rv">
+        <b>עו״ד רועי קובובסקי</b>
+        <span>שותף · D.L.E</span>
+      </div>
+      <div class="direct rv" style="--d:.1s">
+        <a href="tel:054-2113091"><span dir="ltr">054-2113091</span><b>נייד</b></a>
+        <a href="mailto:roy.kubovsky@dle.co.il" class="js-email"><span dir="ltr">roy.kubovsky@dle.co.il</span><b>דוא״ל</b></a>
+        <a href="https://www.linkedin.com/in/roy-kubovsky-34ba2a14/" target="_blank" rel="noopener"><span>הפרופיל של רועי</span><b>LinkedIn</b></a>
+      </div>
+    </div>
+
+    <div class="about-body">
+      <p class="rv">
+        אני עורך דין המתמחה במשפט מנהלי, בדיני מכרזים ובליטיגציה מנהלית. במשך
+        <strong>17 שנים הייתי חלק ממשרד שבלת ושות׳</strong> — מהמשרדים המובילים בישראל —
+        <strong>מתוכן עשר שנים כשותף</strong>. לאחר מכן הצטרפתי <strong>כשותף למשרד D.L.E</strong>,
+        שם אני ממשיך ללוות חלק מהתיקים המורכבים במשק.
+      </p>
+      <p class="rv" style="--d:.08s">
+        לאורך השנים ניהלתי עתירות מנהליות, מכרזים ציבוריים, תובענות ייצוגיות, סכסוכי בעלי
+        מניות ומאבקי שליטה, וליטיגציה מסחרית מורכבת. בשנת 2020 דורגתי על ידי
+        <strong>Legal 500</strong> כעורך דין מומלץ בתחום התובענות הייצוגיות.
+      </p>
+
+      <div class="counts rv" style="--d:.16s">
+        <div class="count"><b data-count="20" data-suffix="+">0</b><span>שנות ניסיון</span></div>
+        <div class="count"><b data-count="17">0</b><span>שנים בשבלת ושות׳</span></div>
+        <div class="count"><b data-count="10">0</b><span>מתוכן כשותף</span></div>
+      </div>
+
+      <div class="facts">
+        <div class="fact rv"><h3>תחומי התמחות</h3><p>משפט מנהלי, דיני מכרזים, ליטיגציה מנהלית, תובענות ייצוגיות, סכסוכי בעלי מניות ושליטה, ליטיגציה מסחרית מורכבת, משפט בינלאומי פרטי, דיני הפצה וקמעונאות.</p></div>
+        <div class="fact rv" style="--d:.08s"><h3>קריירה</h3><p>שותף ב-D.L.E. לשעבר שותף בשבלת ושות׳ — 17 שנים, עשר מהן כשותף.</p></div>
+        <div class="fact rv" style="--d:.16s"><h3>הכרה ודירוגים</h3><p>Legal 500 — עורך דין מומלץ בתובענות ייצוגיות, 2020.</p></div>
+        <div class="fact rv" style="--d:.24s"><h3>שפות</h3><p>עברית, אנגלית.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="יצירת קשר">
+  <div class="wrap">
+    <p class="cta-eyebrow rv">יש לכם שאלה?</p>
+    <a href="#contact" class="cta-big rv" style="--d:.06s"><span class="roll"><i>צרו קשר</i><i>צרו קשר</i></span></a>
+
+    <div class="cta-rows">
+      <div class="cta-row rv" style="--d:.12s">
+        <b>טלפון</b>
+        <a href="tel:03-6072222" class="big-link"><span class="roll"><i>03-6072222</i><i>03-6072222</i></span></a>
+        <a href="tel:054-2113091" class="big-link"><span class="roll"><i>054-2113091</i><i>054-2113091</i></span></a>
+      </div>
+      <div class="cta-row rv" style="--d:.18s">
+        <b>דוא״ל</b>
+        <a href="mailto:roy.kubovsky@dle.co.il" class="big-link js-email"><span class="roll"><i>roy.kubovsky@dle.co.il</i><i>roy.kubovsky@dle.co.il</i></span></a>
+      </div>
+      <div class="cta-row rv" style="--d:.24s">
+        <b>המשרד</b>
+        <span>מגדלי עזריאלי 1 (המגדל העגול)<br />קומה 36, תל אביב יפו</span>
+      </div>
+    </div>
+    <p class="cta-next rv" style="--d:.3s">העמוד הבא — <a href="#practice">תחומי עיסוק</a></p>
+  </div>
+</section>
+
+</main>
+
+<main class="view" id="view-practice" data-view="practice" hidden>
+
+<section class="page-head">
+  <div class="page-head-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="page-crumb"><a href="#home">בית</a><i>—</i><span>תחומי עיסוק</span></p>
+    <h1 class="giant"><span class="gl"><span class="gc" style="--c:0">ת</span><span class="gc" style="--c:1">ח</span><span class="gc" style="--c:2">ו</span><span class="gc" style="--c:3">מ</span><span class="gc" style="--c:4">י</span></span><span class="gl"><span class="gc" style="--c:5">ע</span><span class="gc" style="--c:6">י</span><span class="gc" style="--c:7">ס</span><span class="gc" style="--c:8">ו</span><span class="gc" style="--c:9">ק</span></span></h1>
+      <p class="page-lede">שבעה תחומים שבהם ההליך המשפטי משנה תוצאה עסקית — מול רשויות, בוועדות מכרזים ובבתי המשפט.</p>
+  </div>
+  <span class="page-head-rule" aria-hidden="true"></span>
+</section>
+
+<section class="sec sec--dark">
+  <div class="wrap">
+    <div class="pr-list">
+      <article class="pr rv" style="--d:0.00s"><span class="pr-n">01</span><h3 class="pr-t">משפט מנהלי</h3><p class="pr-d">ייצוג מול רשויות המדינה והשלטון המקומי: תקיפת החלטות מנהליות, רישוי, רגולציה וחופש העיסוק — בליווי אסטרטגי מהשלב המוקדם ועד להכרעה.</p></article>
+      <article class="pr rv" style="--d:0.06s"><span class="pr-n">02</span><h3 class="pr-t">דיני מכרזים</h3><p class="pr-d">ליווי מציעים ועורכי מכרזים: בחינת תנאי סף, השגות ועררים, פסילת הצעות ועתירות מכרזים — כדי שהזכייה לא תוכרע על טכניקה.</p></article>
+      <article class="pr rv" style="--d:0.12s"><span class="pr-n">03</span><h3 class="pr-t">ליטיגציה מנהלית</h3><p class="pr-d">עתירות מנהליות ועתירות לבג״ץ, וייצוג בהליכים מול ועדות וטריבונלים — ניהול חד ומהיר של הליכים שבהם לוח הזמנים קריטי.</p></article>
+      <article class="pr rv" style="--d:0.18s"><span class="pr-n">04</span><h3 class="pr-t">תובענות ייצוגיות</h3><p class="pr-d">ניסיון מוכר על ידי Legal 500 בייצוג בתובענות ייצוגיות — בצד המבקש ובצד הנתבע.</p></article>
+      <article class="pr rv" style="--d:0.24s"><span class="pr-n">05</span><h3 class="pr-t">סכסוכי בעלי מניות ושליטה</h3><p class="pr-d">מאבקי שליטה, קיפוח המיעוט וסכסוכים בין בעלי מניות בחברות פרטיות וציבוריות.</p></article>
+      <article class="pr rv" style="--d:0.30s"><span class="pr-n">06</span><h3 class="pr-t">ליטיגציה מסחרית מורכבת</h3><p class="pr-d">מחלוקות אזרחיות-מסחריות מהמורכבות שיש, לרבות סוגיות של משפט בינלאומי פרטי.</p></article>
+      <article class="pr rv" style="--d:0.36s"><span class="pr-n">07</span><h3 class="pr-t">הפצה, קמעונאות ומסחר</h3><p class="pr-d">ליווי וייצוג בסכסוכי הפצה ובסוגיות משפטיות בעולם הקמעונאי והמסחרי.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="יצירת קשר">
+  <div class="wrap">
+    <p class="cta-eyebrow rv">יש לכם שאלה?</p>
+    <a href="#contact" class="cta-big rv" style="--d:.06s"><span class="roll"><i>צרו קשר</i><i>צרו קשר</i></span></a>
+
+    <div class="cta-rows">
+      <div class="cta-row rv" style="--d:.12s">
+        <b>טלפון</b>
+        <a href="tel:03-6072222" class="big-link"><span class="roll"><i>03-6072222</i><i>03-6072222</i></span></a>
+        <a href="tel:054-2113091" class="big-link"><span class="roll"><i>054-2113091</i><i>054-2113091</i></span></a>
+      </div>
+      <div class="cta-row rv" style="--d:.18s">
+        <b>דוא״ל</b>
+        <a href="mailto:roy.kubovsky@dle.co.il" class="big-link js-email"><span class="roll"><i>roy.kubovsky@dle.co.il</i><i>roy.kubovsky@dle.co.il</i></span></a>
+      </div>
+      <div class="cta-row rv" style="--d:.24s">
+        <b>המשרד</b>
+        <span>מגדלי עזריאלי 1 (המגדל העגול)<br />קומה 36, תל אביב יפו</span>
+      </div>
+    </div>
+    <p class="cta-next rv" style="--d:.3s">העמוד הבא — <a href="#faq">שאלות נפוצות</a></p>
+  </div>
+</section>
+
+</main>
+
+<main class="view" id="view-faq" data-view="faq" hidden>
+
+<section class="page-head">
+  <div class="page-head-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="page-crumb"><a href="#home">בית</a><i>—</i><span>שאלות נפוצות</span></p>
+    <h1 class="giant"><span class="gl"><span class="gc" style="--c:0">ש</span><span class="gc" style="--c:1">א</span><span class="gc" style="--c:2">ל</span><span class="gc" style="--c:3">ו</span><span class="gc" style="--c:4">ת</span></span><span class="gl"><span class="gc" style="--c:5">נ</span><span class="gc" style="--c:6">פ</span><span class="gc" style="--c:7">ו</span><span class="gc" style="--c:8">צ</span><span class="gc" style="--c:9">ו</span><span class="gc" style="--c:10">ת</span></span></h1>
+      <p class="page-lede">המידע כאן כללי ואינו מהווה ייעוץ משפטי. לכל מקרה נסיבות משלו.</p>
+  </div>
+  <span class="page-head-rule" aria-hidden="true"></span>
+</section>
+
+<section class="sec" style="background:var(--paper-2)">
+  <div class="wrap" style="max-width:900px">
+    <div class="faq-list">
+      <details class="faq-item rv" style="--d:0.00s"><summary>תוך כמה זמן צריך לפעול נגד תוצאת מכרז?<span class="pm" aria-hidden="true"></span></summary><div class="faq-a">לוחות הזמנים בדיני מכרזים קצרים מאוד — לעיתים ימים ספורים. מומלץ לפנות לייעוץ מיד עם קבלת ההחלטה, עוד לפני שמתגבשת עמדה סופית, כדי לא לאבד את הזכות לפעול.</div></details>
+      <details class="faq-item rv" style="--d:0.05s"><summary>מהי עתירה מנהלית ומתי היא מתאימה?<span class="pm" aria-hidden="true"></span></summary><div class="faq-a">עתירה מנהלית היא הליך לתקיפת החלטה של רשות ציבורית בבית המשפט לעניינים מנהליים. היא מתאימה כשהחלטה שלטונית פגעה בכם שלא כדין — ולעיתים יש להגישה בתוך פרק זמן קצוב.</div></details>
+      <details class="faq-item rv" style="--d:0.10s"><summary>אתה מייצג רק חברות, או גם יחידים?<span class="pm" aria-hidden="true"></span></summary><div class="faq-a">שניהם. אני מייצג חברות, גופים ציבוריים ופרטיים, יזמים ויחידים — בכל מקום שבו יש מפגש עם רשות, מכרז או מחלוקת מסחרית מורכבת.</div></details>
+      <details class="faq-item rv" style="--d:0.15s"><summary>למה לפנות דווקא אליך?<span class="pm" aria-hidden="true"></span></summary><div class="faq-a">כי אתם מקבלים עורך דין בכיר עם ניסיון של מעל שני עשורים בתיקים המורכבים במשק, שמלווה אתכם אישית. הניסיון הזה עושה את ההבדל דווקא בתיקים הרגישים.</div></details>
+      <details class="faq-item rv" style="--d:0.20s"><summary>איך מתחילים?<span class="pm" aria-hidden="true"></span></summary><div class="faq-a">בשיחה ראשונית קצרה. נבין יחד את העניין, אעריך את הכיוון, ונחליט אם ואיך להתקדם. אפשר להשאיר פרטים בטופס או להתקשר ישירות.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="יצירת קשר">
+  <div class="wrap">
+    <p class="cta-eyebrow rv">יש לכם שאלה?</p>
+    <a href="#contact" class="cta-big rv" style="--d:.06s"><span class="roll"><i>צרו קשר</i><i>צרו קשר</i></span></a>
+
+    <div class="cta-rows">
+      <div class="cta-row rv" style="--d:.12s">
+        <b>טלפון</b>
+        <a href="tel:03-6072222" class="big-link"><span class="roll"><i>03-6072222</i><i>03-6072222</i></span></a>
+        <a href="tel:054-2113091" class="big-link"><span class="roll"><i>054-2113091</i><i>054-2113091</i></span></a>
+      </div>
+      <div class="cta-row rv" style="--d:.18s">
+        <b>דוא״ל</b>
+        <a href="mailto:roy.kubovsky@dle.co.il" class="big-link js-email"><span class="roll"><i>roy.kubovsky@dle.co.il</i><i>roy.kubovsky@dle.co.il</i></span></a>
+      </div>
+      <div class="cta-row rv" style="--d:.24s">
+        <b>המשרד</b>
+        <span>מגדלי עזריאלי 1 (המגדל העגול)<br />קומה 36, תל אביב יפו</span>
+      </div>
+    </div>
+    <p class="cta-next rv" style="--d:.3s">העמוד הבא — <a href="#contact">צרו קשר</a></p>
+  </div>
+</section>
+
+</main>
+
+<main class="view" id="view-contact" data-view="contact" hidden>
+
+<section class="page-head">
+  <div class="page-head-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="page-crumb"><a href="#home">בית</a><i>—</i><span>צרו קשר</span></p>
+    <h1 class="giant"><span class="gl"><span class="gc" style="--c:0">צ</span><span class="gc" style="--c:1">ר</span><span class="gc" style="--c:2">ו</span><span class="gc" style="--c:3">&nbsp;</span><span class="gc" style="--c:4">ק</span><span class="gc" style="--c:5">ש</span><span class="gc" style="--c:6">ר</span></span></h1>
+      <p class="page-lede">השאירו פרטים ואחזור אליכם בהקדם, או התקשרו ישירות.</p>
+  </div>
+  <span class="page-head-rule" aria-hidden="true"></span>
+</section>
+
+<section class="sec sec--dark contact" id="contact">
+  <div class="contact-ghost" aria-hidden="true">KUBOVSKY</div>
+  <div class="wrap ct-grid">
+    <div class="ct-left">
+      <div class="ct-lines" style="margin-block-start:0">
+        <div class="ct-line rv">
+          <b>המשרד</b>
+          <span>דרך מנחם בגין 132<br />מגדלי עזריאלי 1 (המגדל העגול)<br />קומה 36, תל אביב יפו 6702101</span>
+        </div>
+        <div class="ct-line rv" style="--d:.07s">
+          <b>טלפון</b>
+          <div>
+            <a href="tel:03-6072222" class="big-link"><span class="roll"><i>03-6072222</i><i>03-6072222</i></span></a>
+            <a href="tel:054-2113091" class="big-link"><span class="roll"><i>054-2113091</i><i>054-2113091</i></span></a>
+            <span class="faint" dir="ltr">פקס 03-6072220</span>
+          </div>
+        </div>
+        <div class="ct-line rv" style="--d:.14s">
+          <b>דוא״ל</b>
+          <a href="mailto:roy.kubovsky@dle.co.il" class="big-link js-email"><span class="roll"><i>roy.kubovsky@dle.co.il</i><i>roy.kubovsky@dle.co.il</i></span></a>
+        </div>
+        <div class="ct-line rv" style="--d:.21s">
+          <b>עוד</b>
+          <a href="https://www.linkedin.com/in/roy-kubovsky-34ba2a14/" target="_blank" rel="noopener" class="big-link"><span class="roll"><i>LinkedIn</i><i>LinkedIn</i></span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ct-right rv" style="--d:.12s">
+      <div class="form-shell" id="formShell">
+        <form id="leadForm" novalidate>
+          <div class="fld">
+            <input type="text" id="f-name" name="full_name" autocomplete="name" placeholder=" " required maxlength="120" />
+            <label for="f-name">שם מלא</label>
+            <span class="fld-line" aria-hidden="true"></span>
+          </div>
+          <div class="fld">
+            <input type="email" id="f-email" name="email" autocomplete="email" placeholder=" " required maxlength="200" dir="ltr" />
+            <label for="f-email">אימייל</label>
+            <span class="fld-line" aria-hidden="true"></span>
+          </div>
+          <div class="fld">
+            <input type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder=" " maxlength="40" dir="ltr" />
+            <label for="f-phone">טלפון</label>
+            <span class="fld-line" aria-hidden="true"></span>
+          </div>
+          <div class="fld">
+            <textarea id="f-message" name="message" rows="3" placeholder=" " maxlength="4000"></textarea>
+            <label for="f-message">במה אוכל לעזור?</label>
+            <span class="fld-line" aria-hidden="true"></span>
+          </div>
+          <label class="consent">
+            <input type="checkbox" id="f-consent" />
+            <span class="box" aria-hidden="true"></span>
+            <span class="consent-txt">אני מאשר/ת את תנאי השימוש בהתאם <a href="#terms">למדיניות הפרטיות</a>.</span>
+          </label>
+          <button type="submit" class="send" id="submitBtn">
+            <span class="send-lbl"><span class="roll"><i>שליחת הפנייה</i><i>שליחת הפנייה</i></span></span>
+          </button>
+          <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="sent" id="sentPanel" hidden>
+          <svg class="sent-mark" viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="1" />
+            <path d="M15 27 L23 34 L38 19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" />
+          </svg>
+          <h3>הפנייה נשלחה.</h3>
+          <p>אחזור אליכם בהקדם. אם העניין דחוף, אפשר להתקשר ישירות ל־<a href="tel:054-2113091" dir="ltr">054-2113091</a>.</p>
+          <button type="button" class="again" id="againBtn">שליחת פנייה נוספת</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<main class="view" id="view-terms" data-view="terms" hidden>
+
+<section class="page-head">
+  <div class="page-head-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="page-crumb"><a href="#home">בית</a><i>—</i><span>תקנון</span></p>
+    <h1 class="giant"><span class="gl"><span class="gc" style="--c:0">ת</span><span class="gc" style="--c:1">ק</span><span class="gc" style="--c:2">נ</span><span class="gc" style="--c:3">ו</span><span class="gc" style="--c:4">ן</span></span><span class="gl"><span class="gc" style="--c:5">ה</span><span class="gc" style="--c:6">א</span><span class="gc" style="--c:7">ת</span><span class="gc" style="--c:8">ר</span></span></h1>
+      <p class="page-lede">תנאי השימוש באתר ומדיניות הפרטיות של משרד רועי קובובסקי, עורכי דין.</p>
+  </div>
+  <span class="page-head-rule" aria-hidden="true"></span>
+</section>
+
+<section class="legal">
+  <div class="wrap legal-grid">
+    <aside class="legal-toc">
+      <b>בעמוד זה</b>
+      <a href="#general">כללי</a>
+      <a href="#use">השימוש באתר</a>
+      <a href="#noadvice">המידע באתר אינו ייעוץ משפטי</a>
+      <a href="#ip">קניין רוחני</a>
+      <a href="#privacy">מדיניות פרטיות — איזה מידע נאסף</a>
+      <a href="#purpose">השימוש במידע ושמירתו</a>
+      <a href="#rights">זכויותיכם במידע</a>
+      <a href="#cookies">עוגיות</a>
+      <a href="#security">אבטחת מידע</a>
+      <a href="#links">קישורים לאתרים חיצוניים</a>
+      <a href="#accessibility">נגישות</a>
+      <a href="#changes">שינויים בתקנון</a>
+      <a href="#law">דין וסמכות שיפוט</a>
+      <a href="#contact">יצירת קשר</a>
+    </aside>
+    <div class="legal-body">
+      <section id="general" class="rv"><h2><em>01</em>כללי</h2><p>תקנון זה מסדיר את תנאי השימוש באתר האינטרנט של משרד <strong>רועי קובובסקי, עורכי דין</strong> (להלן: "המשרד", "האתר"). הגלישה באתר, השימוש בו ומסירת פרטים באמצעותו מהווים הסכמה לתנאים המפורטים להלן. מי שאינו מסכים לתנאים אלה מתבקש שלא לעשות שימוש באתר.</p>
+<p>התקנון מנוסח בלשון זכר מטעמי נוחות בלבד, ומתייחס לכל המגדרים כאחד.</p></section>
+      <section id="use" class="rv"><h2><em>02</em>השימוש באתר</h2><p>האתר מיועד לשימוש אישי ולא מסחרי, לצורך קבלת מידע כללי אודות המשרד ותחומי עיסוקו ויצירת קשר עמו.</p>
+<ul>
+  <li>אין לעשות באתר שימוש בלתי חוקי, פוגעני או כזה הפוגע בזכויות צד שלישי.</li>
+  <li>אין להפעיל כלים אוטומטיים לאיסוף תוכן מהאתר, ואין לנסות לחדור למערכותיו.</li>
+  <li>אין להשתמש בפרטי הקשר המופיעים באתר לצורך משלוח דברי פרסומת.</li>
+</ul>
+<p>המשרד רשאי לחסום גישה לאתר, כולה או חלקה, בכל עת ולפי שיקול דעתו.</p></section>
+      <section id="noadvice" class="rv"><h2><em>03</em>המידע באתר אינו ייעוץ משפטי</h2><p>התכנים המופיעים באתר, לרבות תיאורי תחומי העיסוק והשאלות הנפוצות, הם מידע כללי ורקעי בלבד. <strong>אין בהם משום ייעוץ משפטי, חוות דעת או המלצה לפעולה</strong>, ואין להסתמך עליהם כתחליף לייעוץ פרטני.</p>
+<p>כל מקרה נבחן לפי נסיבותיו הספציפיות. הסתמכות על תוכן האתר היא באחריות המשתמש בלבד.</p>
+<p><strong>פנייה דרך האתר אינה יוצרת יחסי עורך דין–לקוח.</strong> יחסים כאלה ייווצרו רק לאחר בדיקת ניגוד עניינים, הסכמה מפורשת של המשרד לייצג, וחתימה על הסכם שכר טרחה. אין לשלוח דרך האתר מידע חסוי או רגיש לפני שנוצרו יחסי עורך דין–לקוח.</p></section>
+      <section id="ip" class="rv"><h2><em>04</em>קניין רוחני</h2><p>כל זכויות הקניין הרוחני באתר — לרבות העיצוב, הטקסטים, הלוגו, התמונות והקוד — שייכות למשרד או לבעלי הזכויות שהעניקו למשרד רישיון שימוש.</p>
+<p>אין להעתיק, לשכפל, להפיץ, לפרסם או לעשות כל שימוש מסחרי בתכני האתר ללא אישור מראש ובכתב מהמשרד.</p></section>
+      <section id="privacy" class="rv"><h2><em>05</em>מדיניות פרטיות — איזה מידע נאסף</h2><p>מסירת פרטים באתר נעשית מרצון ואינה חובה חוקית. המידע הנאסף הוא זה שאתם בוחרים למסור בטופס יצירת הקשר:</p>
+<ul>
+  <li>שם מלא</li>
+  <li>כתובת דואר אלקטרוני</li>
+  <li>מספר טלפון (אופציונלי)</li>
+  <li>תוכן ההודעה שבחרתם לכתוב</li>
+</ul>
+<p>בנוסף נאסף מידע טכני שנוצר ממילא בעת הגלישה, כגון סוג הדפדפן ומערכת ההפעלה.</p></section>
+      <section id="purpose" class="rv"><h2><em>06</em>השימוש במידע ושמירתו</h2><p>המידע משמש אך ורק לצורך מענה לפנייתכם, יצירת קשר חוזר וניהול רישום פניות. המשרד אינו מוכר, משכיר או מעביר את המידע לצדדים שלישיים לצרכים מסחריים.</p>
+<p>המידע עשוי להישמר אצל ספקי תשתית ושירות הפועלים עבור המשרד לצורך תפעול טופס יצירת הקשר ושמירת הפניות. ספקים אלה מחויבים לשמור על סודיות המידע ולעשות בו שימוש לצורך מתן השירות בלבד.</p>
+<p>המידע יישמר למשך הזמן הנדרש לטיפול בפנייה ולעמידה בחובות שמירת מסמכים החלות על המשרד, ולאחר מכן יימחק או יאוחסן בנפרד.</p>
+<p>המשרד רשאי למסור מידע אם יידרש לכך על פי דין, על פי צו שיפוטי, או לצורך הגנה על זכויותיו בהליך משפטי.</p></section>
+      <section id="rights" class="rv"><h2><em>07</em>זכויותיכם במידע</h2><p>בהתאם לחוק הגנת הפרטיות, התשמ״א–1981, אתם רשאים:</p>
+<ul>
+  <li>לעיין במידע שנשמר אודותיכם</li>
+  <li>לבקש את תיקונו אם הוא אינו נכון, שלם או מעודכן</li>
+  <li>לבקש את מחיקתו</li>
+  <li>לחזור בכם מהסכמה שניתנה</li>
+</ul>
+<p>לפנייה בנושא זה ניתן לכתוב לכתובת <a href="mailto:roy.kubovsky@dle.co.il" class="js-email">roy.kubovsky@dle.co.il</a>. המשרד ישיב לפנייה בתוך זמן סביר.</p></section>
+      <section id="cookies" class="rv"><h2><em>08</em>עוגיות</h2><p>האתר עושה שימוש מינימלי בעוגיות (Cookies) ובטכנולוגיות דומות, ככל שנדרש לתפעולו התקין ולטעינת גופנים ורכיבים חיצוניים.</p>
+<p>ניתן לחסום או למחוק עוגיות דרך הגדרות הדפדפן. חסימה עשויה לפגוע בחלק מהפונקציונליות של האתר.</p></section>
+      <section id="security" class="rv"><h2><em>09</em>אבטחת מידע</h2><p>המשרד נוקט אמצעים סבירים ומקובלים לאבטחת המידע הנמסר באתר. יחד עם זאת, לא ניתן להבטיח חסינות מוחלטת מפני חדירה או שימוש לא מורשה, והמשרד אינו אחראי לנזק שייגרם כתוצאה מאירועים כאלה, ככל שנקט באמצעים סבירים.</p></section>
+      <section id="links" class="rv"><h2><em>10</em>קישורים לאתרים חיצוניים</h2><p>באתר עשויים להופיע קישורים לאתרים של צדדים שלישיים. המשרד אינו אחראי לתוכנם, למדיניות הפרטיות שלהם או לזמינותם, והכללת קישור אינה מהווה המלצה.</p></section>
+      <section id="accessibility" class="rv"><h2><em>11</em>נגישות</h2><p>האתר תוכנן מתוך שאיפה לעמוד בעקרונות הנגישות המקובלים (WCAG 2.1 ברמה AA), לרבות ניווט מקלדת, ניגודיות צבעים מספקת וכיבוד העדפת מערכת להפחתת תנועה.</p>
+<p>אם נתקלתם בקושי בשימוש באתר, נשמח לשמוע ולתקן. ניתן לפנות לכתובת <a href="mailto:roy.kubovsky@dle.co.il" class="js-email">roy.kubovsky@dle.co.il</a>.</p></section>
+      <section id="changes" class="rv"><h2><em>12</em>שינויים בתקנון</h2><p>המשרד רשאי לעדכן תקנון זה מעת לעת. הנוסח המחייב הוא זה המופיע באתר במועד השימוש. מומלץ לעיין בתקנון מדי פעם.</p></section>
+      <section id="law" class="rv"><h2><em>13</em>דין וסמכות שיפוט</h2><p>על תקנון זה ועל השימוש באתר יחולו דיני מדינת ישראל בלבד. סמכות השיפוט הבלעדית בכל עניין הנובע מהם נתונה לבתי המשפט המוסמכים במחוז תל אביב-יפו.</p></section>
+      <section id="contact" class="rv"><h2><em>14</em>יצירת קשר</h2><p>רועי קובובסקי, עורכי דין<br />
+מגדלי עזריאלי 1 (המגדל העגול), קומה 36<br />
+דרך מנחם בגין 132, תל אביב יפו 6702101</p>
+<p>טלפון: <a href="tel:03-6072222" dir="ltr">03-6072222</a> · נייד: <a href="tel:054-2113091" dir="ltr">054-2113091</a><br />
+דוא״ל: <a href="mailto:roy.kubovsky@dle.co.il" class="js-email">roy.kubovsky@dle.co.il</a></p></section>
+      <p class="legal-meta">עודכן לאחרונה: ספטמבר 2026. נוסח זה מהווה תנאי שימוש כלליים ואינו מחליף בדיקה פרטנית של יועץ מוסמך.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="יצירת קשר">
+  <div class="wrap">
+    <p class="cta-eyebrow rv">יש לכם שאלה?</p>
+    <a href="#contact" class="cta-big rv" style="--d:.06s"><span class="roll"><i>צרו קשר</i><i>צרו קשר</i></span></a>
+
+    <div class="cta-rows">
+      <div class="cta-row rv" style="--d:.12s">
+        <b>טלפון</b>
+        <a href="tel:03-6072222" class="big-link"><span class="roll"><i>03-6072222</i><i>03-6072222</i></span></a>
+        <a href="tel:054-2113091" class="big-link"><span class="roll"><i>054-2113091</i><i>054-2113091</i></span></a>
+      </div>
+      <div class="cta-row rv" style="--d:.18s">
+        <b>דוא״ל</b>
+        <a href="mailto:roy.kubovsky@dle.co.il" class="big-link js-email"><span class="roll"><i>roy.kubovsky@dle.co.il</i><i>roy.kubovsky@dle.co.il</i></span></a>
+      </div>
+      <div class="cta-row rv" style="--d:.24s">
+        <b>המשרד</b>
+        <span>מגדלי עזריאלי 1 (המגדל העגול)<br />קומה 36, תל אביב יפו</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer class="foot">
   <div class="wrap foot-in">
     <div>רועי קובובסקי, עורכי דין — משפט מנהלי, מכרזים וליטיגציה מנהלית</div>
     <nav>
-      <a href="about.html">אודות</a>
-      <a href="practice.html">תחומי עיסוק</a>
-      <a href="faq.html">שאלות נפוצות</a>
-      <a href="contact.html">צרו קשר</a>
-      <a href="terms.html">תקנון האתר</a>
+      <a href="#about">אודות</a>
+      <a href="#practice">תחומי עיסוק</a>
+      <a href="#faq">שאלות נפוצות</a>
+      <a href="#contact">צרו קשר</a>
+      <a href="#terms">תקנון האתר</a>
     </nav>
     <div><span id="year"></span> © כל הזכויות שמורות</div>
   </div>
@@ -171,6 +1405,449 @@ window.SITE_CONFIG = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
-<script src="assets/app.js"></script>
+<script>
+
+(function () {
+  "use strict";
+  var VIEWS = ["home", "about", "practice", "faq", "contact", "terms"];
+  var TITLES = {
+    home: "רועי קובובסקי, עורכי דין — משפט מנהלי, מכרזים וליטיגציה מנהלית",
+    about: "אודות — רועי קובובסקי, עורכי דין",
+    practice: "תחומי עיסוק — רועי קובובסקי, עורכי דין",
+    faq: "שאלות נפוצות — רועי קובובסקי, עורכי דין",
+    contact: "צרו קשר — רועי קובובסקי, עורכי דין",
+    terms: "תקנון ומדיניות פרטיות — רועי קובובסקי, עורכי דין"
+  };
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var current = null, busy = false;
+
+  function idFromHash() {
+    var h = (location.hash || "").replace(/^#/, "");
+    return VIEWS.indexOf(h) >= 0 ? h : "home";
+  }
+
+  function markNav(id) {
+    document.querySelectorAll(".menu-nav a[data-nav]").forEach(function (a) {
+      if (a.getAttribute("data-nav") === id) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+  }
+
+  /* חשיפה מחדש של האלמנטים בתצוגה שנכנסה */
+  function resetReveals(view) {
+    view.querySelectorAll(".rv, .rv-fade, .rv-mask").forEach(function (el) {
+      el.classList.remove("in");
+    });
+    view.querySelectorAll("[data-count]").forEach(function (el) {
+      el.textContent = "0";
+    });
+    if (window.__observeReveals) window.__observeReveals(view);
+  }
+
+  function swap(id) {
+    VIEWS.forEach(function (v) {
+      var el = document.getElementById("view-" + v);
+      if (!el) return;
+      if (v === id) {
+        el.hidden = false;
+        resetReveals(el);
+        void el.offsetWidth;
+        el.classList.add("shown");
+      } else {
+        el.hidden = true;
+        el.classList.remove("shown");
+      }
+    });
+    document.title = TITLES[id] || TITLES.home;
+    markNav(id);
+    current = id;
+    window.scrollTo(0, 0);
+    var mask = document.getElementById("heroMask");
+    if (mask && id === "home") setTimeout(function () { mask.classList.add("in"); }, 320);
+  }
+
+  function go(id) {
+    if (busy || id === current) return;
+    var curtain = document.getElementById("curtain");
+    if (reduce || !curtain) { swap(id); return; }
+    busy = true;
+    curtain.classList.add("fast");
+    curtain.classList.remove("lift");
+    setTimeout(function () {
+      swap(id);
+      curtain.classList.remove("lift");
+      void curtain.offsetWidth;
+      curtain.classList.add("lift");
+      setTimeout(function () { busy = false; }, 620);
+    }, 620);
+  }
+
+  window.addEventListener("hashchange", function () { go(idFromHash()); });
+
+  document.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest ? e.target.closest("a") : null;
+    if (!a) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    var href = a.getAttribute("href") || "";
+    if (href.charAt(0) !== "#") return;
+    var id = href.slice(1);
+    if (VIEWS.indexOf(id) < 0) return;           /* עוגן רגיל בתוך עמוד — לא נגענו */
+    e.preventDefault();
+    var menu = document.getElementById("menu"), menuBtn = document.getElementById("menuBtn");
+    if (menu && menu.classList.contains("open")) {
+      menu.classList.remove("open");
+      document.body.classList.remove("locked");
+      if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+    }
+    if (id === current) { window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); return; }
+    if (location.hash.replace(/^#/, "") === id) go(id);
+    else location.hash = id;
+  });
+
+  window.__initRouter = function () { swap(idFromHash()); };
+})();
+
+</script>
+<script>
+
+(function () {
+  "use strict";
+  var cfg = window.SITE_CONFIG || {};
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- 1. רצף הפתיחה ---------- */
+  var curtain = document.getElementById("curtain");
+  function startIntro() {
+    document.body.classList.add("ready");
+    if (window.__initRouter) window.__initRouter();
+    var mask = document.getElementById("heroMask");
+    if (mask) setTimeout(function () { mask.classList.add("in"); }, 350);
+  }
+  var leaving = false;
+  function lift() {
+    if (leaving) return;
+    if (!curtain) { startIntro(); return; }
+    curtain.classList.remove("fast");
+    curtain.classList.add("lift");
+    startIntro();
+  }
+  if (reduce) { if (curtain) curtain.classList.add("lift"); startIntro(); }
+  else {
+    window.addEventListener("load", function () { setTimeout(lift, 900); });
+    setTimeout(lift, 3200); /* רשת ביטחון אם load מתעכב */
+  }
+
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted && curtain) { leaving = false; curtain.classList.remove("fast"); curtain.classList.add("lift"); }
+  });
+
+  /* ---------- 2. תפריט מסך מלא ---------- */
+  var menu = document.getElementById("menu"),
+      menuBtn = document.getElementById("menuBtn");
+  function setMenu(open) {
+    menu.classList.toggle("open", open);
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    menuBtn.setAttribute("aria-label", open ? "סגירת התפריט" : "פתיחת התפריט");
+    document.body.classList.toggle("locked", open);
+  }
+  menuBtn.addEventListener("click", function () {
+    setMenu(menuBtn.getAttribute("aria-expanded") !== "true");
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); menuBtn.focus(); }
+  });
+
+  /* ---------- 3. כותרת נסתרת בגלילה + סרגל התקדמות ---------- */
+  var hdr = document.getElementById("hdr"), bar = document.getElementById("bar"), last = 0;
+  function onScroll() {
+    var y = window.scrollY || 0;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
+    if (!menu.classList.contains("open")) {
+      hdr.classList.toggle("hide", y > last && y > 260);
+    }
+    last = y;
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- 3b. פרלקסה עדינה בהירו ---------- */
+  if (!reduce) {
+    var heroIn = document.querySelector(".hero-in"),
+        heroGhost = document.querySelector(".hero-ghost"),
+        heroSec = document.querySelector(".hero"),
+        ticking = false;
+    function parallax() {
+      ticking = false;
+      var y = window.scrollY || 0;
+      if (!heroSec || y > heroSec.offsetHeight) return;
+      if (heroIn) heroIn.style.transform = "translate3d(0," + (y * -0.13) + "px,0)";
+      if (heroGhost) heroGhost.style.transform = "translate3d(-50%," + (y * 0.22) + "px,0)";
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(parallax); }
+    }, { passive: true });
+  }
+
+  /* ---------- 4. חשיפה בגלילה ---------- */
+  var targets = document.querySelectorAll(".rv, .rv-fade, .rv-mask");
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+        var counters = e.target.querySelectorAll("[data-count]");
+        counters.forEach(runCount);
+      });
+    }, { threshold: 0.16, rootMargin: "0px 0px -6% 0px" });
+    targets.forEach(function (el) { io.observe(el); });
+    window.__observeReveals = function (root) {
+      root.querySelectorAll(".rv, .rv-fade, .rv-mask").forEach(function (el) { io.observe(el); });
+    };
+  } else {
+    targets.forEach(function (el) { el.classList.add("in"); });
+    window.__observeReveals = function (root) {
+      root.querySelectorAll(".rv, .rv-fade, .rv-mask").forEach(function (el) { el.classList.add("in"); });
+      root.querySelectorAll("[data-count]").forEach(runCount);
+    };
+    document.querySelectorAll("[data-count]").forEach(runCount);
+  }
+
+  /* ---------- 5. מונים ---------- */
+  function runCount(el) {
+    var to = parseInt(el.getAttribute("data-count"), 10) || 0;
+    var suffix = el.getAttribute("data-suffix") || "";
+    if (reduce) { el.textContent = to + suffix; return; }
+    var t0 = null, dur = 1400;
+    function step(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(to * eased) + (p === 1 ? suffix : "");
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ---------- 6. מחליף ציטוטים ---------- */
+  var qs = Array.prototype.slice.call(document.querySelectorAll("#quotes .q")),
+      dots = document.getElementById("qDots"), qi = 0, qTimer;
+  if (qs.length && dots) {
+    qs.forEach(function (_, i) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-label", "ציטוט " + (i + 1));
+      b.addEventListener("click", function () { showQ(i); restart(); });
+      dots.appendChild(b);
+    });
+    function showQ(i) {
+      qi = i;
+      qs.forEach(function (q, n) { q.classList.toggle("on", n === i); });
+      dots.querySelectorAll("button").forEach(function (b, n) {
+        b.setAttribute("aria-current", n === i ? "true" : "false");
+      });
+    }
+    function restart() {
+      clearInterval(qTimer);
+      if (!reduce) qTimer = setInterval(function () { showQ((qi + 1) % qs.length); }, 6500);
+    }
+    showQ(0); restart();
+  }
+
+  /* ---------- 7. שאלות נפוצות — אחת פתוחה בכל פעם ---------- */
+  var faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach(function (item) {
+    item.addEventListener("toggle", function () {
+      if (item.open) faqItems.forEach(function (o) { if (o !== item) o.open = false; });
+    });
+  });
+
+  /* ---------- 8. סמן מותאם (מסך גדול בלבד) ---------- */
+  if (window.matchMedia("(hover:hover) and (pointer:fine)").matches && !reduce) {
+    var cur = document.getElementById("cur"), dot = document.getElementById("curDot");
+    var cx = 0, cy = 0, tx = 0, ty = 0;
+    window.addEventListener("mousemove", function (e) {
+      tx = e.clientX; ty = e.clientY;
+      dot.style.transform = "translate(" + tx + "px," + ty + "px)";
+      document.body.classList.add("has-cursor");
+    }, { passive: true });
+    (function loop() {
+      cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+      cur.style.transform = "translate(" + cx + "px," + cy + "px)";
+      requestAnimationFrame(loop);
+    })();
+    document.addEventListener("mouseover", function (e) {
+      var hit = e.target && e.target.closest && e.target.closest("a, button, summary, input, textarea");
+      cur.classList.toggle("big", !!hit);
+    });
+  }
+
+  /* ---------- 8b. גלגול טקסט בקישורי הפוטר ---------- */
+  document.querySelectorAll(".foot nav a").forEach(function (a) {
+    var t = a.textContent.trim();
+    a.innerHTML = '<span class="roll"><i></i><i></i></span>';
+    a.querySelectorAll("i").forEach(function (n) { n.textContent = t; });
+  });
+
+  /* ---------- 8c. תוכן עניינים בעמוד התקנון ---------- */
+  var tocLinks = document.querySelectorAll(".legal-toc a");
+  if (tocLinks.length && "IntersectionObserver" in window) {
+    var secs = [];
+    tocLinks.forEach(function (a) {
+      var t = document.querySelector(a.getAttribute("href"));
+      if (t) secs.push({ a: a, el: t });
+    });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        secs.forEach(function (s) { s.a.classList.toggle("active", s.el === en.target); });
+      });
+    }, { rootMargin: "-18% 0px -70% 0px" });
+    secs.forEach(function (s) { spy.observe(s.el); });
+    tocLinks.forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        var t = document.querySelector(a.getAttribute("href"));
+        if (!t) return;
+        e.preventDefault();
+        t.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+        history.replaceState(null, "", a.getAttribute("href"));
+      });
+    });
+  }
+
+  /* ---------- 9. שנה בפוטר ---------- */
+  var yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------- 10. טופס יצירת קשר ---------- */
+  var supa = null;
+  function getSupa() {
+    if (supa) return supa;
+    if (!cfg.supabaseUrl || !cfg.supabaseAnonKey || !window.supabase) return null;
+    supa = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
+    return supa;
+  }
+
+  var form = document.getElementById("leadForm"),
+      statusEl = document.getElementById("formStatus"),
+      submitBtn = document.getElementById("submitBtn");
+
+  function setStatus(msg, kind) {
+    if (!statusEl) return;
+    statusEl.textContent = msg;
+    statusEl.className = "status" + (kind ? " " + kind : "");
+  }
+
+  var TARGET_EMAIL = cfg.formEmail || cfg.fallbackEmail || cfg.contactEmail || "";
+
+  function mailtoFallback(p) {
+    var body = "שם: " + p.full_name + "\n" + "אימייל: " + p.email + "\n" +
+               "טלפון: " + (p.phone || "-") + "\n\nהודעה:\n" + (p.message || "");
+    window.location.href = "mailto:" + TARGET_EMAIL +
+      "?subject=" + encodeURIComponent("פנייה מהאתר — " + p.full_name) +
+      "&body=" + encodeURIComponent(body);
+  }
+
+  function emailForm(p) {
+    return fetch("https://formsubmit.co/ajax/" + encodeURIComponent(TARGET_EMAIL), {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        "שם": p.full_name, "אימייל": p.email, "טלפון": p.phone || "-",
+        "הודעה": p.message || "",
+        "_subject": "פנייה חדשה מהאתר — " + p.full_name,
+        "_template": "table", "_captcha": "false"
+      })
+    }).then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); });
+  }
+
+  function storeLead(p) {
+    var client = getSupa();
+    if (!client) return;
+    try { client.from("roey_leads").insert(p).then(function () {}, function () {}); } catch (e) {}
+  }
+
+  var shell = document.getElementById("formShell"),
+      sentPanel = document.getElementById("sentPanel"),
+      againBtn = document.getElementById("againBtn"),
+      consent = document.getElementById("f-consent");
+
+  function flagBad(el, on) {
+    var box = el && el.closest ? el.closest(".fld, .consent") : null;
+    if (box) box.classList.toggle("bad", !!on);
+  }
+  ["f-name", "f-email", "f-phone", "f-message"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener("input", function () { flagBad(el, false); });
+  });
+  if (consent) consent.addEventListener("change", function () { flagBad(consent, false); });
+
+  function showSent() {
+    if (!form || !sentPanel) return;
+    form.setAttribute("hidden", "");
+    form.style.display = "none";
+    sentPanel.removeAttribute("hidden");
+    if (shell) shell.scrollIntoView({ block: "nearest" });
+  }
+  if (againBtn) {
+    againBtn.addEventListener("click", function () {
+      sentPanel.setAttribute("hidden", "");
+      form.removeAttribute("hidden");
+      form.style.display = "";
+      setStatus("", "");
+      var first = document.getElementById("f-name");
+      if (first) first.focus();
+    });
+  }
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var p = {
+        full_name: (form.full_name.value || "").trim(),
+        email: (form.email.value || "").trim(),
+        phone: (form.phone.value || "").trim() || null,
+        kind: "general",
+        message: (form.message.value || "").trim() || null,
+        user_agent: navigator.userAgent
+      };
+      if (!p.full_name) {
+        setStatus("נא למלא שם מלא.", "err"); flagBad(form.full_name, true); form.full_name.focus(); return;
+      }
+      if (!p.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.email)) {
+        setStatus("נא למלא כתובת אימייל תקינה.", "err"); flagBad(form.email, true); form.email.focus(); return;
+      }
+      if (consent && !consent.checked) {
+        setStatus("נא לאשר את תנאי השימוש כדי לשלוח.", "err"); flagBad(consent, true); consent.focus(); return;
+      }
+      submitBtn.disabled = true;
+      setStatus("שולח…", "");
+      storeLead(p);
+      emailForm(p).then(function () {
+        submitBtn.disabled = false;
+        form.reset();
+        setStatus("", "");
+        showSent();
+      }).catch(function () {
+        submitBtn.disabled = false;
+        setStatus("פותח את תוכנת הדוא״ל שלכם להשלמת השליחה…", "");
+        setTimeout(function () { mailtoFallback(p); }, 700);
+      });
+    });
+  }
+
+  /* ---------- 11. הצגת הדוא"ל מתוך ההגדרות ---------- */
+  var displayEmail = cfg.contactEmail || cfg.fallbackEmail;
+  if (displayEmail) {
+    document.querySelectorAll(".js-email").forEach(function (el) {
+      var target = el.querySelector("span") || el;
+      target.textContent = displayEmail;
+      el.href = "mailto:" + displayEmail;
+    });
+  }
+})();
+
+</script>
 </body>
 </html>
