@@ -1,0 +1,10 @@
+{
+  "name": "kubovsky-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "אתר משרד עורכי הדין רועי קובובסקי",
+  "scripts": {
+    "dev": "npx --yes serve . -l 3000",
+    "deploy": "npx --yes vercel --prod"
+  }
+}
